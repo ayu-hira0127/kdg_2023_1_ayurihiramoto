@@ -1,0 +1,26 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{%static 'tokai/css/create.css'%}">
+    <link rel="stylesheet" href="{%static 'tokai/css/reset.css'%}">
+
+<body>
+    
+
+
+{% block title %}新規投稿{% endblock %} 
+
+{% block content %}
+<!-- <form method="POST" enctype="multipart/form-data"> -->
+    <form method="POST" enctype="multipart/form-data" class="p-4 m-4 bg-light border border-success rounded form-group">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="投稿する">
+</form>
+    {% endblock content %}
+
+</body>
