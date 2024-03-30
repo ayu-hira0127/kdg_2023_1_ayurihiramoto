@@ -1,0 +1,121 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{%static 'tokai/css/reset.css'%}">
+    <link rel="stylesheet" href="{%static 'tokai/css/style.css'%}">
+    
+    <title>Tokaionair</title>
+    </head>
+    <body>
+        
+    <header>  
+       <nav>
+        <div class="top">
+                <div><a href="#top">
+                <img class="onerbard" src="{% static 'tokai/img/onerbard.PNG'%}" alt="onerbard"></a>
+                </div>
+                
+                    <input type="checkbox" class="menu-btn" id="menu-btn">
+                
+                    <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
+               
+            
+            
+                <ul class="menu">
+            
+                <li class="nav_youtube"><a href="#youtube">YouTube</a></li>
+                <li class="nav_profile"><a href="#Profile">Profile</a></li>
+                <li class="nav_store"><a href="#Store">Store</a></li>
+                <li><a href="{% url 'tokai:video' %}">video site</a></li>
+                <!-- {% if request.user.is_authenticated %}
+                    <form action="{% url 'accounts:logout' %}" method="post" name="logout">{% csrf_token %}
+                        <li class="nav_mypage">
+                            <a href="javascript:logout.submit()">logout</a>
+                        </li>
+                    </form>
+                {% else %}
+                    <li class="nav_mypage"><a href="{% url 'accounts:login' %}">video site</a></li>
+                {% endif %} -->
+                </ul>
+        </div> 
+        </nav>
+            
+            <h1 class="tokai">
+            
+                <img src="{% static 'tokai/img/1_tokai.jpg' %}" alt="header">
+            </h1> 
+            
+    </header>
+
+        <main>
+        <section>
+            <div class="anniversary">
+            <a href="https://tokaionair.jp/pages/10th-anniversary"><img src="{% static 'tokai/img/anniversary.jpg' %}" alt="anniversary"></a>
+        </div>
+    </section>
+
+        <section>
+        
+            <div class="Profile">
+            <h1 id="Profile">Profile</h1>
+            <div class="Profile_content">
+            <ul class="first_img">
+            <li><a href="{% url 'tokai:tosimitu' %}"><img src="{% static 'tokai/img/tosimitu_1.JPG' %}" alt="tosimitu"></a></li>
+            <li><a href="{% url 'tokai:tetuya' %}"><img src="{% static 'tokai/img/tetuya_1.JPG' %}" alt="tetuya"></a></li>
+            <li><a href="{% url 'tokai:sibayu' %}"><img src="{% static 'tokai/img/sibayu_1.JPG' %}" alt="sibayu"></a></li>
+           </ul>
+           <ul class="second_img">
+            <li><a href="{% url 'tokai:musimegane' %}"><img src="{% static 'tokai/img/musimegane_1.JPG' %}" alt="musimegane"></a></li>
+            <li><a href="{% url 'tokai:yumemaru' %}"><img src="{% static 'tokai/img/yumemaru_1.JPG' %}" alt="yumemaru"></a></li>
+            <li><a href="{% url 'tokai:ryo' %}"><img src="{% static 'tokai/img/ryou_1.JPG' %}" alt="ryo"></a></li>
+       </ul>
+    </div>
+     </div>
+    </section>
+    <section>
+        <div class="youtube">
+           
+            <div id="youtube">
+        <h1>人気動画</h1>
+        <ul>
+        <li><iframe  src="https://www.youtube.com/embed/ygiQOJoY_9A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+       <li><iframe  src="https://www.youtube.com/embed/iX35yxAxMp0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+        <li><iframe  src="https://www.youtube.com/embed/xkQOFe1Fjfw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+        <li><iframe  src="https://www.youtube.com/embed/ABkpsORJwxI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+        <Li><iframe  src="https://www.youtube.com/embed/Tz2dbJCDt_I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></Li>
+ </div>
+
+</div>
+</section>
+    <section class="osusume">
+        <div class="cont">
+    <p><iframe src="https://www.youtube.com/embed/XqlK3lzmcLA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+   </div>
+   
+    <img class="nijyou" src="{% static 'tokai/img/nijyoukun.PNG' %}" alt="nijyoukun">
+ 
+ </section>
+    <section>
+        <div class="store">
+        <h1 id="Store">Official store </h1>
+        <div class="store_img">
+        <a href="https://tokaionair.jp/"><img src="{% static 'tokai/img/official store.png' %}" alt="official store"></a>
+        </div>
+    </section>
+        </div>
+       
+    </div>
+    </body>
+        </main>
+        <footer>
+            TOKAIONAIR
+        </footer>
+</body>
+</html>
+
+
+       

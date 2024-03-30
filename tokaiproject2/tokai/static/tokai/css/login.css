@@ -1,0 +1,65 @@
+@charset "utf-8";
+.logo p {
+    width: 300px;
+    margin: 0 auto;
+}
+.infomation img {
+    max-width: 300px;
+    margin: 0 auto 0 0;
+}
+.infomation {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+.form-control{
+    border: 1px solid black;
+    margin: 20px;
+    padding: 10px;
+    width: 235px;
+}
+.infomation ul {
+    border: 3px solid black;
+    padding: 50px;
+    width: 400px;
+
+}
+.infomation li p {
+    text-align: center;
+}
+.btn {
+    background-color: #6BB2DE;
+    padding: 10px;
+    margin: 30px;
+    width: 235px;
+}
+.new{
+    border: 3px solid black;
+    padding: 10px;
+    margin: 30px;
+}
+@media screen and (max-width: 480px) {
+    .infomation {
+        width: 300px;
+    }
+    .form-control{
+        margin: 20px auto;
+    
+    }
+    img{
+        width: 200px;
+        text-align: center;
+    }
+    .infomation ul {
+        padding: 50px;
+        width: 100%;   
+    }
+    .form-control{
+        width: 180px;
+    }
+    .btn{
+     width: 130px;
+     padding: 15px;
+    } 
+}
+   

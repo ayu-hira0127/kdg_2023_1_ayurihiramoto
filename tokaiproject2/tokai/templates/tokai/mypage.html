@@ -1,0 +1,71 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{%static 'tokai/css/reset.css'%}">
+    <link rel="stylesheet" href="{%static 'tokai/css/my.css'%}">
+    <title>Tokaionair_video_share_mypage</title>
+</head>
+
+<body>
+    <div class="menu">
+        <div class="menu_botan">
+            <a  href="{% url 'tokai:video' %}">Top</a>
+            <form action="{% url 'accounts:logout' %}" method="post" name="logout">
+            {% csrf_token %} 
+            <a href="javascript:logout.submit()">logout</a>
+        </div>
+    </div>
+
+    <div class="account">
+        <p>アカウント名</p>
+        <p class="my_name">{{ user.get_username }}</p>
+    </div>
+    
+    <p class="video">動画</p>
+
+    <div class="video_list">
+        
+        {% if user.is_authenticated %}
+            {% if file_list %}
+                <ul class="V">
+                {% for file in file_list %}
+
+                <li>
+                    <video width="220" height="300" controls>
+                        <source src="{{ file.files.url }}" type="video/mp4">
+                        <form method="post" action="{% url 'tokai:delete_fileupload' file.id %}">
+                            {% csrf_token %}
+                            <button type="submit">削除</button>
+                        </form>
+                    </video>
+                        <form method="post" action="{% url 'tokai:delete_fileupload' file.id %}">
+                            {% csrf_token %}
+                            <button type="submit">削除</button>
+                        </form>
+                </li>
+                {% endfor %}        
+            
+                </ul>
+            {% else %}
+            <p>No files uploaded yet.</p>
+            {% endif %}
+        {% else %}
+            <p>Please log in to view your files.</p>
+        {% endif %}
+
+    </div>
+    <div class="create_botan">
+        <a class="new" href="{% url 'tokai:upload' %}">投稿</a>
+    </div>
+    <script>
+        function confirmDelete(fileId) {
+            if (confirm("この動画を削除してもよろしいですか？")) {
+                document.getElementById("delete-form-" + fileId).submit();
+            }
+        }
+    </script>
+</body>

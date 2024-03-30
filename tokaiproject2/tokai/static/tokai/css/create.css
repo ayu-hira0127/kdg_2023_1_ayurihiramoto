@@ -1,0 +1,27 @@
+body{
+    text-align: center;
+
+}
+.information{
+    border: 3px solid black;
+
+    width: 450px;
+    margin: 0 auto;
+ 
+}
+h1{
+    font-size: 54px;
+    margin: auto 0;
+    margin: 150px 0 60px 0;
+}
+.botan{
+    background-color: #6BB2DE;
+    padding: 10px;
+
+    margin:60px auto;
+    width: 135px;
+}
+.p-4 {
+    margin: 30px auto;
+}
+

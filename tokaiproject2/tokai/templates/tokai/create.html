@@ -1,0 +1,28 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{%static 'tokai/css/reset.css'%}">
+    <link rel="stylesheet" href="{%static 'tokai/css/create.css'%}">
+    
+    <title>Tokaionair_create</title>
+    </head>
+    <body>
+        <h1>
+{% block title %}新規投稿{% endblock %} 
+</h1>
+<div class="information">
+{% block content %}
+<!-- <form method="POST" enctype="multipart/form-data"> -->
+    <form method="POST" enctype="multipart/form-data" class="p-4 m-4 bg-light border border-success rounded form-group">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+   </div> 
+    <div class="botan">
+    <input type="submit" value="投稿する">
+    </div>
+</form>
+    {% endblock content %}
